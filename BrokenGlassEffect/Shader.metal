@@ -54,7 +54,7 @@ fragment float4 passThroughFragment(VertexOut inFrag [[stage_in]],
 {
     float2 additionUV = float2((pointCoord[0]) * uniforms.pointTexcoordScale[0], (1.0 - pointCoord[1]) * uniforms.pointTexcoordScale[1]);
     float2 uv = inFrag.pointPosition + additionUV;
-    uv = float2(uv[0], 1.0 - uv[1]);
+    uv = float2(uv[0], uv[1]);
     float4 finalColor = diffuse.sample(s, uv);
     return finalColor;
 };

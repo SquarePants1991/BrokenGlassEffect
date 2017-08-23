@@ -24,10 +24,24 @@ class MetalBaseView: UIView {
     private var lastTickedTime: TimeInterval = 0
     private var elapsedTime: TimeInterval = 0
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initMetal()
+        initPipline()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         initMetal()
         initPipline()
+    }
+    
+    deinit {
+        
     }
     
     override func layoutSubviews() {
@@ -142,6 +156,11 @@ class MetalBaseView: UIView {
     
     func update(deltaTime: TimeInterval, elapsedTime: TimeInterval) {
         
+    }
+    
+    func destroy() {
+        self.displayLink.remove(from: RunLoop.main, forMode: .defaultRunLoopMode)
+        self.displayLink = nil
     }
 }
 

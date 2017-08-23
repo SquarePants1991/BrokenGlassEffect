@@ -17,6 +17,8 @@
 		D33F7FC81F4AB363009F5BF5 /* Shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = D33F7FC71F4AB363009F5BF5 /* Shader.metal */; };
 		D33F7FCC1F4AD591009F5BF5 /* GLKitSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33F7FCB1F4AD591009F5BF5 /* GLKitSwift.swift */; };
 		D33F7FCE1F4ADFF5009F5BF5 /* texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D33F7FCD1F4ADFF4009F5BF5 /* texture.jpg */; };
+		D3C128741F4C1BA2009309E5 /* PresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C128731F4C1BA2009309E5 /* PresentedViewController.swift */; };
+		D3C128761F4C1BD4009309E5 /* BrokenGlassTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C128751F4C1BD4009309E5 /* BrokenGlassTransitionAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		D33F7FC71F4AB363009F5BF5 /* Shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shader.metal; sourceTree = "<group>"; };
 		D33F7FCB1F4AD591009F5BF5 /* GLKitSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLKitSwift.swift; sourceTree = "<group>"; };
 		D33F7FCD1F4ADFF4009F5BF5 /* texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = texture.jpg; sourceTree = "<group>"; };
+		D3C128731F4C1BA2009309E5 /* PresentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentedViewController.swift; sourceTree = "<group>"; };
+		D3C128751F4C1BD4009309E5 /* BrokenGlassTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrokenGlassTransitionAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,8 @@
 				D30B2FED1F4AB0ED00495EBB /* BrokenGlassEffectView.swift */,
 				D33F7FC71F4AB363009F5BF5 /* Shader.metal */,
 				D33F7FCB1F4AD591009F5BF5 /* GLKitSwift.swift */,
+				D3C128731F4C1BA2009309E5 /* PresentedViewController.swift */,
+				D3C128751F4C1BD4009309E5 /* BrokenGlassTransitionAnimator.swift */,
 			);
 			path = BrokenGlassEffect;
 			sourceTree = "<group>";
@@ -153,10 +159,12 @@
 			files = (
 				D30B2FDC1F4AABE100495EBB /* ViewController.swift in Sources */,
 				D30B2FEE1F4AB0ED00495EBB /* BrokenGlassEffectView.swift in Sources */,
+				D3C128741F4C1BA2009309E5 /* PresentedViewController.swift in Sources */,
 				D30B2FDA1F4AABE100495EBB /* AppDelegate.swift in Sources */,
 				D33F7FC81F4AB363009F5BF5 /* Shader.metal in Sources */,
 				D30B2FEC1F4AAC4700495EBB /* MetalBaseView.swift in Sources */,
 				D33F7FCC1F4AD591009F5BF5 /* GLKitSwift.swift in Sources */,
+				D3C128761F4C1BD4009309E5 /* BrokenGlassTransitionAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

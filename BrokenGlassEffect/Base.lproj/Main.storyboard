@@ -17,52 +17,91 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqk-K3-gkr" customClass="BrokenGlassEffectView" customModule="BrokenGlassEffect" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nj-dT-0jw">
-                                <rect key="frame" x="10" y="30" width="44" height="44"/>
+                                <rect key="frame" x="149" y="311.5" width="77" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="PsU-gh-xXI"/>
-                                    <constraint firstAttribute="width" constant="44" id="iBa-4u-YNc"/>
                                 </constraints>
-                                <state key="normal" title="爆破"/>
+                                <state key="normal" title="进入详情页">
+                                    <color key="titleColor" red="0.99595195055007935" green="0.9960898756980896" blue="0.99188202619552612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="brokeClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="THC-MY-9Lg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5x-gN-YxP">
-                                <rect key="frame" x="321" y="30" width="44" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="ToL-Xb-9zP"/>
-                                    <constraint firstAttribute="width" constant="44" id="xax-pS-fqE"/>
-                                </constraints>
-                                <state key="normal" title="重置"/>
-                                <connections>
-                                    <action selector="resetClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MRV-l4-iMK"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="0.73079427080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.30322593450546265" green="0.43261730670928955" blue="0.08106810599565506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bqk-K3-gkr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="36Q-3g-jUU"/>
-                            <constraint firstItem="bqk-K3-gkr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CoK-po-8Wk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bqk-K3-gkr" secondAttribute="trailing" id="K4j-Bi-dAx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X5x-gN-YxP" secondAttribute="trailing" constant="10" id="Lvr-n4-Lpf"/>
-                            <constraint firstItem="7nj-dT-0jw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="aHl-Og-6D4"/>
-                            <constraint firstItem="X5x-gN-YxP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="dWU-Gc-XCr"/>
-                            <constraint firstItem="7nj-dT-0jw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="lpV-QK-d8C"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bqk-K3-gkr" secondAttribute="bottom" id="xBo-Tl-fa8"/>
+                            <constraint firstItem="7nj-dT-0jw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="SjJ-Wn-DdQ"/>
+                            <constraint firstItem="7nj-dT-0jw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="raF-f4-FQd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="brokenGlassView" destination="bqk-K3-gkr" id="okG-q4-gnz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Presented View Controller-->
+        <scene sceneID="l9F-je-iKT">
+            <objects>
+                <viewController storyboardIdentifier="presented" id="QCM-Jx-iVx" customClass="PresentedViewController" customModule="BrokenGlassEffect" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="presented" id="x5u-N3-cj6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="texture.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wl2-Rm-1mz">
+                                <rect key="frame" x="16" y="40" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="KvE-fc-TsE"/>
+                                    <constraint firstAttribute="height" constant="50" id="sEh-5t-6iz"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="handyTOOL的测试页面" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cf8-5S-0i6">
+                                <rect key="frame" x="86" y="55.5" width="177.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XGR-WE-i5z">
+                                <rect key="frame" x="16" y="116" width="343" height="545"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xO-Jh-u3U">
+                                <rect key="frame" x="313" y="48" width="46" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" red="0.73156875371932983" green="0.12748795747756958" blue="0.080725856125354767" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonClicked:" destination="QCM-Jx-iVx" eventType="touchUpInside" id="WBR-7D-CAQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KyD-5Y-64o" firstAttribute="bottom" secondItem="XGR-WE-i5z" secondAttribute="bottom" constant="6" id="3eD-mH-Zyb"/>
+                            <constraint firstItem="XGR-WE-i5z" firstAttribute="leading" secondItem="KyD-5Y-64o" secondAttribute="leading" constant="16" id="AM6-J2-GCt"/>
+                            <constraint firstItem="KyD-5Y-64o" firstAttribute="trailing" secondItem="XGR-WE-i5z" secondAttribute="trailing" constant="16" id="EDv-se-4LX"/>
+                            <constraint firstItem="KyD-5Y-64o" firstAttribute="trailing" secondItem="5xO-Jh-u3U" secondAttribute="trailing" constant="16" id="Fwt-80-QRp"/>
+                            <constraint firstItem="wl2-Rm-1mz" firstAttribute="top" secondItem="KyD-5Y-64o" secondAttribute="top" constant="20" id="IBZ-1v-m8G"/>
+                            <constraint firstItem="wl2-Rm-1mz" firstAttribute="leading" secondItem="KyD-5Y-64o" secondAttribute="leading" constant="16" id="Vwl-mH-RHv"/>
+                            <constraint firstItem="Cf8-5S-0i6" firstAttribute="leading" secondItem="wl2-Rm-1mz" secondAttribute="trailing" constant="20" id="aGZ-i6-nQb"/>
+                            <constraint firstItem="XGR-WE-i5z" firstAttribute="top" secondItem="Cf8-5S-0i6" secondAttribute="bottom" constant="40" id="loc-r0-lYL"/>
+                            <constraint firstItem="Cf8-5S-0i6" firstAttribute="centerY" secondItem="wl2-Rm-1mz" secondAttribute="centerY" id="oBI-3x-o31"/>
+                            <constraint firstItem="5xO-Jh-u3U" firstAttribute="centerY" secondItem="Cf8-5S-0i6" secondAttribute="centerY" id="php-QR-9SI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KyD-5Y-64o"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="APr-kU-uVM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492" y="70"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="texture.jpg" width="1242" height="2208"/>
+    </resources>
 </document>

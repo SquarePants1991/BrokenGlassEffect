@@ -39,7 +39,7 @@ struct PointMoveInfo {
     
     static func defaultMoveInfo(centerX: Float, centerY: Float) -> PointMoveInfo {
         let xSpeed = (Float(arc4random()) / Float(RAND_MAX) - 0.5) * 0.7
-        let yAccelerate = (-Float(arc4random()) / Float(RAND_MAX)) * 1.0 - 2.0
+        let yAccelerate = (-Float(arc4random()) / Float(RAND_MAX)) * 1.5 - 3.0
         let moveInfo = PointMoveInfo.init(xSpeed: xSpeed, ySpeed: 0, xAccelerate: 0, yAccelerate: yAccelerate, originCenterX: centerX, originCenterY: centerY, translateX: 0, translateY: 0)
         return moveInfo
     }
@@ -56,15 +56,32 @@ class BrokenGlassEffectView: MetalBaseView {
     // 运动管理
     var pointTransforms: [matrix_float4x4]!
     var pointMoveInfo: [PointMoveInfo]!
-    var maxYSpeed: Float = -4.0
+    var maxYSpeed: Float = -6.0
     
     // 是否破碎
     var isBroking: Bool = false
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    deinit {
+        
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        commonInit()
+    }
+    
+    func commonInit() {
         self.metalLayer.isOpaque = false
-        self.backgroundColor = UIColor.darkGray
+        self.backgroundColor = UIColor.clear
         setupRenderAssets()
         enableAniamtionTimer()
     }
@@ -79,6 +96,10 @@ class BrokenGlassEffectView: MetalBaseView {
         self.vertexBuffer = device.makeBuffer(bytes: self.vertexArray, length: vertexBufferSize, options: MTLResourceOptions.cpuCacheModeWriteCombined)
         
         self.imageTexture = createTexture(image: UIImage.init(named: "texture.jpg")!)
+    }
+    
+    func setImageForBroke(image: UIImage) {
+        self.imageTexture = createTexture(image: image)
     }
     
     func beginBroke() {
@@ -110,12 +131,12 @@ class BrokenGlassEffectView: MetalBaseView {
                 
                 let realY = pointMoveInfo[i].translateY + pointMoveInfo[i].originCenterY
                 let realX = pointMoveInfo[i].translateX + pointMoveInfo[i].originCenterX
-                if realY <= -1.0 {
-                    pointMoveInfo[i].ySpeed = -pointMoveInfo[i].ySpeed * 0.6
-                    if fabs(pointMoveInfo[i].ySpeed) < 0.01 {
-                        pointMoveInfo[i].ySpeed = 0
-                    }
-                }
+//                if realY <= -1.0 {
+//                    pointMoveInfo[i].ySpeed = -pointMoveInfo[i].ySpeed * 0.6
+//                    if fabs(pointMoveInfo[i].ySpeed) < 0.01 {
+//                        pointMoveInfo[i].ySpeed = 0
+//                    }
+//                }
                 if realX <= -1.0 || realX >= 1.0 {
                     pointMoveInfo[i].xSpeed = -pointMoveInfo[i].xSpeed * 0.6
                     if fabs(pointMoveInfo[i].xSpeed) < 0.01 {
@@ -145,7 +166,7 @@ class BrokenGlassEffectView: MetalBaseView {
     // MARK: Private Methods
     private func buildPointData() -> [Float] {
         var vertexDataArray: [Float] = []
-        let pointSize: Float = 12
+        let pointSize: Float = 2
         let viewWidth: Float = Float(UIScreen.main.bounds.width)
         let viewHeight: Float = Float(UIScreen.main.bounds.height)
         let rowCount = Int(viewHeight / pointSize) + 1

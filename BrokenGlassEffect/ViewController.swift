@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
 
     @IBOutlet weak var brokenGlassView: BrokenGlassEffectView!
+    let brokenGlassAnimator: BrokenGlassTransitionAnimator = BrokenGlassTransitionAnimator.init()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,12 +23,15 @@ class ViewController: UIViewController {
     }
 
     @IBAction func brokeClicked(_ sender: Any) {
-        brokenGlassView.beginBroke()
+        let vc = PresentedViewController.instance()
+        vc.transitioningDelegate = self
+        self.present(vc, animated: true) {
+            
+        }
     }
     
-    @IBAction func resetClicked(_ sender: Any) {
-        brokenGlassView.reset()
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return brokenGlassAnimator
     }
-    
 }
 
